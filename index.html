@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A privacy-first cybersecurity preparedness workspace for high-net-worth individuals, families, and trusted advisers.">
+  <meta name="theme-color" content="#07111f">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; media-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta property="og:title" content="Private Wealth Cybersecurity Command Center">
+  <meta property="og:description" content="Protect the people, identities, devices, and decisions around your wealth.">
+  <meta property="og:type" content="website">
+  <title>Private Wealth Cybersecurity Command Center</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">PW</div>
+        <div>
+          <strong>Private Wealth</strong>
+          <span>Cybersecurity Command Center</span>
+        </div>
+      </div>
+
+      <div class="privacy-chip"><span aria-hidden="true">●</span> Local-only workspace</div>
+
+      <nav id="primary-nav" class="primary-nav">
+        <button class="nav-button is-active" data-view="command" type="button"><span aria-hidden="true">⌂</span> Command</button>
+        <button class="nav-button" data-view="assessment" type="button"><span aria-hidden="true">◈</span> Assessment</button>
+        <button class="nav-button" data-view="plan" type="button"><span aria-hidden="true">✓</span> Action plan</button>
+        <button class="nav-button" data-view="household" type="button"><span aria-hidden="true">◇</span> Household</button>
+        <button class="nav-button" data-view="incidents" type="button"><span aria-hidden="true">!</span> Incident desk</button>
+        <button class="nav-button" data-view="travel" type="button"><span aria-hidden="true">↗</span> Travel mode</button>
+        <button class="nav-button" data-view="resources" type="button"><span aria-hidden="true">◎</span> Resources</button>
+        <button class="nav-button" data-view="privacy" type="button"><span aria-hidden="true">▣</span> Privacy & data</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Built by <strong>John Tyler</strong></p>
+        <a href="https://johncalvintyler.com" target="_blank" rel="noopener noreferrer">johncalvintyler.com <span aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button id="mobile-menu" class="icon-button mobile-only" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="topbar-context">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="save-status" role="status" aria-live="polite">Ready · stored in this browser</span>
+        </div>
+        <div class="topbar-actions">
+          <button class="button button-quiet" type="button" data-view-target="incidents">Open incident desk</button>
+          <button id="quick-print" class="button button-primary" type="button">Print action plan</button>
+        </div>
+      </header>
+
+      <main id="main-content" tabindex="-1">
+        <section id="view-command" class="view is-active" data-view-panel="command" aria-labelledby="command-title">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="eyebrow">PRIVATE CYBER RESILIENCE</div>
+              <h1 id="command-title">Protect what wealth depends on.</h1>
+              <p class="hero-lede">A private, practical system for reducing account takeover, payment fraud, identity theft, household exposure, and recovery time—without sending your data anywhere.</p>
+              <div class="hero-actions">
+                <button class="button button-primary button-large" type="button" data-view-target="assessment">Continue assessment</button>
+                <button class="button button-secondary button-large" type="button" data-view-target="plan">View priorities</button>
+              </div>
+              <div class="trust-row" aria-label="Privacy attributes">
+                <span>Zero accounts</span><span>Zero analytics</span><span>Zero network calls</span>
+              </div>
+            </div>
+
+            <div class="posture-panel card-elevated" aria-label="Current preparedness posture">
+              <div class="posture-head">
+                <div>
+                  <span class="micro-label">HOUSEHOLD POSTURE</span>
+                  <strong id="posture-label">Baseline not established</strong>
+                </div>
+                <span id="coverage-pill" class="pill">0% assessed</span>
+              </div>
+              <div class="score-layout">
+                <div id="score-ring" class="score-ring" role="img" aria-label="Readiness score not yet established">
+                  <div><strong id="score-value">—</strong><span>/ 100</span></div>
+                </div>
+                <div class="score-context">
+                  <p id="score-message">Complete the assessment to establish a defensible baseline.</p>
+                  <button class="text-button" type="button" data-view-target="assessment">Assess the household <span aria-hidden="true">→</span></button>
+                </div>
+              </div>
+              <div class="signal-grid">
+                <div><span>Priority gaps</span><strong id="priority-gap-count">—</strong></div>
+                <div><span>Controls completed</span><strong id="control-count">0 / 20</strong></div>
+                <div><span>Plan coverage</span><strong id="plan-coverage">0%</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">EXECUTIVE VIEW</span>
+              <h2>Your next best moves</h2>
+            </div>
+            <button class="text-button" type="button" data-view-target="plan">Open full roadmap <span aria-hidden="true">→</span></button>
+          </div>
+          <div id="command-priorities" class="priority-grid"></div>
+
+          <div class="dashboard-grid">
+            <article class="card span-2">
+              <div class="card-header">
+                <div>
+                  <span class="micro-label">DEFENSE-IN-DEPTH</span>
+                  <h2>Readiness by pillar</h2>
+                </div>
+                <span class="muted">Weighted, deterministic score</span>
+              </div>
+              <div id="pillar-bars" class="pillar-bars"></div>
+            </article>
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <span class="micro-label">HOUSEHOLD MAP</span>
+                  <h2>People & access</h2>
+                </div>
+                <button class="icon-button" type="button" data-view-target="household" aria-label="Open household map">→</button>
+              </div>
+              <div class="metric-stack">
+                <div><strong id="household-count">0</strong><span>household roles mapped</span></div>
+                <div><strong id="crown-jewel-count">0</strong><span>critical systems cataloged</span></div>
+                <div><strong id="vendor-count">0</strong><span>trusted parties reviewed</span></div>
+              </div>
+            </article>
+
+            <article class="card emergency-card">
+              <span class="micro-label">WHEN MINUTES MATTER</span>
+              <h2>Incident quick launch</h2>
+              <p>Open a step-by-step response checklist before changing accounts or moving money.</p>
+              <div class="quick-launches">
+                <button type="button" data-incident-launch="wire-fraud">Payment fraud</button>
+                <button type="button" data-incident-launch="account-takeover">Account takeover</button>
+                <button type="button" data-incident-launch="sim-swap">SIM swap</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-assessment" class="view" data-view-panel="assessment" aria-labelledby="assessment-title">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">MEASURE THE BASELINE</div>
+              <h1 id="assessment-title">Household security assessment</h1>
+              <p>Rate the controls that protect identities, funds, devices, communications, people, and recovery. Unanswered items count as gaps until marked otherwise.</p>
+            </div>
+            <div class="page-head-stat">
+              <strong id="assessment-progress-value">0%</strong>
+              <span>assessment coverage</span>
+            </div>
+          </div>
+
+          <div class="assessment-toolbar card-flat">
+            <div id="assessment-filters" class="filter-row" role="group" aria-label="Filter assessment by pillar"></div>
+            <button id="assessment-clear" class="button button-danger button-small" type="button">Clear answers</button>
+          </div>
+
+          <div class="assessment-legend" aria-label="Assessment answer key">
+            <span><i class="legend-dot yes"></i> Implemented</span>
+            <span><i class="legend-dot partial"></i> Partial</span>
+            <span><i class="legend-dot no"></i> Gap</span>
+            <span><i class="legend-dot na"></i> Not applicable</span>
+          </div>
+
+          <div id="assessment-list" class="assessment-list"></div>
+        </section>
+
+        <section id="view-plan" class="view" data-view-panel="plan" aria-labelledby="plan-title">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">PRIORITIZED ROADMAP</div>
+              <h1 id="plan-title">Turn exposure into action.</h1>
+              <p>Your roadmap is generated from assessment answers. It prioritizes the controls that can reduce loss, lockout, and recovery time first.</p>
+            </div>
+            <div class="page-head-actions">
+              <button id="export-plan" class="button button-secondary" type="button">Export share-safe JSON</button>
+              <button id="print-plan" class="button button-primary" type="button">Print / Save PDF</button>
+            </div>
+          </div>
+
+          <div class="plan-summary card-elevated">
+            <div>
+              <span class="micro-label">CURRENT READINESS</span>
+              <strong id="plan-score">—</strong>
+              <span id="plan-score-label">Baseline not established</span>
+            </div>
+            <div>
+              <span class="micro-label">ASSESSMENT COVERAGE</span>
+              <strong id="plan-assessed">0%</strong>
+              <span id="plan-assessed-detail">0 of 0 controls rated</span>
+            </div>
+            <div>
+              <span class="micro-label">PRIORITY GAPS</span>
+              <strong id="plan-gap-count">—</strong>
+              <span>high-impact controls</span>
+            </div>
+          </div>
+
+          <div id="roadmap" class="roadmap"></div>
+
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">THE FORTRESS FIVE</span>
+              <h2>Five controls worth doing first</h2>
+            </div>
+            <span id="fortress-progress" class="pill">0 of 20 complete</span>
+          </div>
+          <div id="fortress-five" class="fortress-grid"></div>
+        </section>
+
+        <section id="view-household" class="view" data-view-panel="household" aria-labelledby="household-title">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">PEOPLE · SYSTEMS · TRUST</div>
+              <h1 id="household-title">Map the human attack surface.</h1>
+              <p>Use aliases and high-level labels—not legal names, account numbers, passwords, recovery phrases, or private addresses.</p>
+            </div>
+            <div class="local-badge">Stored only in this browser</div>
+          </div>
+
+          <div class="tab-row" role="tablist" aria-label="Household registers">
+            <button class="subtab is-active" type="button" role="tab" aria-selected="true" data-household-tab="people">People & access</button>
+            <button class="subtab" type="button" role="tab" aria-selected="false" data-household-tab="assets">Crown jewels</button>
+            <button class="subtab" type="button" role="tab" aria-selected="false" data-household-tab="vendors">Trusted parties</button>
+          </div>
+
+          <div id="household-people" class="subview is-active" data-household-panel="people">
+            <div class="register-layout">
+              <form id="person-form" class="card register-form" autocomplete="off">
+                <div class="card-header"><div><span class="micro-label">ADD A ROLE</span><h2>Household member</h2></div></div>
+                <label>Alias or role label<input name="alias" maxlength="40" required placeholder="Principal A"></label>
+                <div class="form-grid">
+                  <label>Role<select name="role"><option>Principal</option><option>Partner</option><option>Adult family</option><option>Minor</option><option>Elder</option><option>Assistant</option><option>Other</option></select></label>
+                  <label>Access exposure<select name="exposure"><option>High</option><option selected>Medium</option><option>Low</option></select></label>
+                  <label>Authentication<select name="auth"><option>Strong</option><option selected>Partial</option><option>Weak</option><option>Unknown</option></select></label>
+                  <label>Security briefing<select name="training"><option>Current</option><option selected>Due</option><option>Not applicable</option></select></label>
+                </div>
+                <button class="button button-primary" type="submit">Add to map</button>
+              </form>
+              <div class="card register-table-card">
+                <div class="card-header"><div><span class="micro-label">CURRENT MAP</span><h2>People & access</h2></div><span id="people-total" class="pill">0 mapped</span></div>
+                <div id="people-empty" class="empty-state"><span aria-hidden="true">◇</span><strong>No roles mapped yet</strong><p>Start with principals, family members, assistants, and anyone able to approve payments or reset accounts.</p></div>
+                <div class="table-wrap"><table id="people-table" class="data-table" hidden><thead><tr><th>Alias</th><th>Role</th><th>Exposure</th><th>Authentication</th><th>Briefing</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody></tbody></table></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="household-assets" class="subview" data-household-panel="assets" hidden>
+            <div class="register-layout">
+              <form id="asset-form" class="card register-form" autocomplete="off">
+                <div class="card-header"><div><span class="micro-label">ADD A SYSTEM</span><h2>Crown jewel register</h2></div></div>
+                <label>Safe label only<input name="label" maxlength="50" required placeholder="Primary email"></label>
+                <div class="form-grid">
+                  <label>Category<select name="category"><option>Primary email</option><option>Financial</option><option>Identity</option><option>Cloud storage</option><option>Mobile carrier</option><option>Digital asset</option><option>Home system</option><option>Other</option></select></label>
+                  <label>Owner alias<input name="owner" maxlength="40" placeholder="Principal A"></label>
+                  <label>Protection<select name="protection"><option>Strong</option><option selected>Partial</option><option>Weak</option><option>Unknown</option></select></label>
+                  <label>Recovery tested<select name="recovery"><option>Verified</option><option selected>Review due</option><option>Unknown</option><option>Not applicable</option></select></label>
+                </div>
+                <button class="button button-primary" type="submit">Add system</button>
+              </form>
+              <div class="card register-table-card">
+                <div class="card-header"><div><span class="micro-label">DEPENDENCIES</span><h2>Critical systems</h2></div><span id="assets-total" class="pill">0 cataloged</span></div>
+                <div id="assets-empty" class="empty-state"><span aria-hidden="true">◈</span><strong>No systems cataloged yet</strong><p>Map categories and recovery status without storing credentials, URLs, balances, keys, or account numbers.</p></div>
+                <div class="table-wrap"><table id="assets-table" class="data-table" hidden><thead><tr><th>Label</th><th>Category</th><th>Owner</th><th>Protection</th><th>Recovery</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody></tbody></table></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="household-vendors" class="subview" data-household-panel="vendors" hidden>
+            <div class="register-layout">
+              <form id="vendor-form" class="card register-form" autocomplete="off">
+                <div class="card-header"><div><span class="micro-label">ADD A TRUSTED PARTY</span><h2>Vendor access review</h2></div></div>
+                <label>Firm or role label<input name="label" maxlength="50" required placeholder="Wealth adviser"></label>
+                <div class="form-grid">
+                  <label>Category<select name="category"><option>Financial adviser</option><option>Legal</option><option>Tax</option><option>Household staff</option><option>IT / security</option><option>Property management</option><option>Insurance</option><option>Other</option></select></label>
+                  <label>Access level<select name="access"><option>Financial approval</option><option>Sensitive data</option><option>Home systems</option><option selected>Limited</option><option>None</option></select></label>
+                  <label>MFA confirmed<select name="mfa"><option>Yes</option><option selected>Unknown</option><option>No</option><option>Not applicable</option></select></label>
+                  <label>Last reviewed<input name="reviewed" type="date"></label>
+                </div>
+                <button class="button button-primary" type="submit">Add trusted party</button>
+              </form>
+              <div class="card register-table-card">
+                <div class="card-header"><div><span class="micro-label">THIRD-PARTY RISK</span><h2>Trusted parties</h2></div><span id="vendors-total" class="pill">0 reviewed</span></div>
+                <div id="vendors-empty" class="empty-state"><span aria-hidden="true">◎</span><strong>No trusted parties mapped yet</strong><p>Include advisers, accountants, attorneys, assistants, household staff, IT providers, and property teams with meaningful access.</p></div>
+                <div class="table-wrap"><table id="vendors-table" class="data-table" hidden><thead><tr><th>Label</th><th>Category</th><th>Access</th><th>MFA</th><th>Last reviewed</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody></tbody></table></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-incidents" class="view" data-view-panel="incidents" aria-labelledby="incidents-title">
+          <div class="page-head incident-head">
+            <div>
+              <div class="eyebrow">CALM · VERIFY · CONTAIN</div>
+              <h1 id="incidents-title">Incident response desk</h1>
+              <p>Choose the closest scenario and work the checklist in order. Use only verified contact details from an official app, statement, or prebuilt offline directory.</p>
+            </div>
+            <div class="emergency-note"><strong>Immediate danger?</strong><span>Contact local emergency services first.</span></div>
+          </div>
+
+          <div class="incident-principles">
+            <div><strong>01</strong><span>Pause the interaction</span></div>
+            <div><strong>02</strong><span>Verify out of band</span></div>
+            <div><strong>03</strong><span>Contain from a trusted device</span></div>
+            <div><strong>04</strong><span>Preserve evidence</span></div>
+          </div>
+
+          <div id="incident-grid" class="incident-grid"></div>
+          <div id="incident-workspace" class="incident-workspace card-elevated" hidden aria-live="polite"></div>
+        </section>
+
+        <section id="view-travel" class="view" data-view-panel="travel" aria-labelledby="travel-title">
+          <div class="travel-hero card-elevated">
+            <div>
+              <div class="eyebrow">REDUCE THE TRAVEL ATTACK SURFACE</div>
+              <h1 id="travel-title">Travel mode</h1>
+              <p>Minimize exposed data, harden the devices you carry, and make recovery possible without your primary phone.</p>
+            </div>
+            <div class="travel-toggle-wrap">
+              <span id="travel-mode-label">Travel mode inactive</span>
+              <button id="travel-toggle" class="switch" type="button" role="switch" aria-checked="false"><span></span><span class="sr-only">Toggle travel mode</span></button>
+            </div>
+          </div>
+
+          <div class="travel-metrics">
+            <div><span>Checklist</span><strong id="travel-progress">0%</strong></div>
+            <div><span>Remaining</span><strong id="travel-remaining">0</strong></div>
+            <div><span>Mode</span><strong id="travel-status">Standard</strong></div>
+          </div>
+
+          <div id="travel-checklists" class="travel-checklists"></div>
+
+          <div class="card callout-card">
+            <div><span class="micro-label">FAMILY VERIFICATION PROTOCOL</span><h2>Make urgency harmless.</h2></div>
+            <p>Agree on a private verification process offline. For unexpected money, credential, or rescue requests: pause, end the incoming contact, and call back using a previously verified channel. Never store the family secret or challenge answer in this app.</p>
+            <button id="print-verification-card" class="button button-secondary" type="button">Print protocol card</button>
+          </div>
+        </section>
+
+        <section id="view-resources" class="view" data-view-panel="resources" aria-labelledby="resources-title">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">AUTHORITATIVE GUIDANCE</div>
+              <h1 id="resources-title">Know where to turn.</h1>
+              <p>Direct links to U.S. government guidance and reporting resources. Opening a resource leaves this local-only application.</p>
+            </div>
+          </div>
+          <div id="resource-grid" class="resource-grid"></div>
+
+          <div class="section-heading"><div><span class="eyebrow">PLAIN-LANGUAGE REFERENCE</span><h2>Security terms that matter</h2></div></div>
+          <div id="glossary" class="glossary"></div>
+        </section>
+
+        <section id="view-privacy" class="view" data-view-panel="privacy" aria-labelledby="privacy-title">
+          <div class="page-head">
+            <div>
+              <div class="eyebrow">LOCAL BY DESIGN</div>
+              <h1 id="privacy-title">Your browser is the vault boundary.</h1>
+              <p>This application has no account, backend, analytics, cookies, ads, or network requests. Your entries remain in this browser's local storage until you erase them.</p>
+            </div>
+            <div class="privacy-seal" aria-hidden="true">LOCAL<br>ONLY</div>
+          </div>
+
+          <div class="privacy-grid">
+            <article class="card">
+              <span class="micro-label">SAFE USE</span>
+              <h2>Do not enter secrets.</h2>
+              <ul class="check-list static-list">
+                <li>Use aliases, categories, and high-level status labels.</li>
+                <li>Never enter passwords, passkeys, PINs, recovery codes, seed phrases, account numbers, balances, legal IDs, or private addresses.</li>
+                <li>Avoid this tool on shared, managed, or untrusted devices.</li>
+                <li>Clearing browser storage can remove all saved progress.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <span class="micro-label">ENCRYPTED BACKUP</span>
+              <h2>Move your workspace safely.</h2>
+              <p class="muted">Export uses AES-256-GCM with a password-derived key. The password is never saved. If you lose it, the backup cannot be recovered.</p>
+              <label>Backup password<input id="backup-password" type="password" minlength="12" maxlength="128" autocomplete="new-password" placeholder="12+ characters"></label>
+              <div class="button-row">
+                <button id="export-backup" class="button button-primary" type="button">Export encrypted backup</button>
+                <label class="button button-secondary file-button">Import encrypted backup<input id="import-backup" type="file" accept="application/json,.pwcc"></label>
+              </div>
+              <p id="backup-status" class="form-status" role="status" aria-live="polite"></p>
+            </article>
+
+            <article class="card">
+              <span class="micro-label">SYNTHETIC DEMO</span>
+              <h2>Explore without personal data.</h2>
+              <p class="muted">Load a fictional household profile to preview scoring, the generated roadmap, registers, and progress tracking.</p>
+              <button id="load-demo" class="button button-secondary" type="button">Load demonstration profile</button>
+            </article>
+
+            <article class="card danger-zone">
+              <span class="micro-label">DANGER ZONE</span>
+              <h2>Erase local workspace</h2>
+              <p class="muted">Deletes assessment answers, checklists, aliases, registers, and incident progress from this browser. This cannot be undone without an exported backup.</p>
+              <button id="erase-data" class="button button-danger" type="button">Erase all local data</button>
+            </article>
+          </div>
+
+          <div class="card data-facts">
+            <div><strong>localStorage</strong><span>Progress and register entries</span></div>
+            <div><strong>0</strong><span>Tracking scripts or cookies</span></div>
+            <div><strong>0</strong><span>Application network requests</span></div>
+            <div><strong>Manual</strong><span>Encrypted export and deletion</span></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>Private Wealth Cybersecurity Command Center · An independent open-source project by John Tyler</div>
+        <div>Planning guidance, not a security certification or substitute for legal, financial, insurance, or incident-response professionals.</div>
+      </footer>
+    </div>
+  </div>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title">
+    <form method="dialog">
+      <span class="micro-label">CONFIRM ACTION</span>
+      <h2 id="confirm-title">Are you sure?</h2>
+      <p id="confirm-message"></p>
+      <div class="button-row end">
+        <button class="button button-secondary" value="cancel">Cancel</button>
+        <button id="confirm-accept" class="button button-danger" value="confirm">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="print-protocol" class="print-protocol" aria-hidden="true">
+    <h1>Family Verification Protocol</h1>
+    <p><strong>Unexpected request?</strong> Stop. End the incoming call or message. Do not move money, share codes, install software, or follow contact details provided in the request.</p>
+    <ol>
+      <li>Call back using a number or channel verified before the incident.</li>
+      <li>Complete the family's offline verification step.</li>
+      <li>Require the pre-agreed second approver for high-impact requests.</li>
+      <li>If verification fails, alert the household and the relevant institution.</li>
+    </ol>
+    <div class="print-fields"><div>Primary callback channel: ____________________</div><div>Second approver: ____________________</div><div>Institution contact source: ____________________</div></div>
+    <p class="small">Do not write the family secret, PIN, recovery code, account number, or password on this card.</p>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
