@@ -1537,6 +1537,7 @@
   }
 
   function initialize() {
+    $$('.view').forEach((view) => { view.tabIndex = -1; });
     bindEvents();
     renderResources();
     renderAll();

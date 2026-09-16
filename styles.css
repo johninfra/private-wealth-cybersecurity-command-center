@@ -554,6 +554,7 @@ input:hover, select:hover { border-color: #345371; }
 .incident-principles span { color: var(--muted); font-size: 10px; font-weight: 750; }
 .incident-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .incident-card { display: grid; min-height: 190px; align-content: space-between; padding: 17px; border: 1px solid var(--line-soft); border-radius: 15px; background: linear-gradient(145deg, rgba(14, 29, 47, 0.88), rgba(7, 17, 29, 0.8)); cursor: pointer; transition: border-color 150ms ease, transform 150ms ease; }
+.incident-card { width: 100%; color: var(--text); text-align: left; }
 .incident-card:hover { border-color: rgba(227, 187, 107, 0.32); transform: translateY(-2px); }
 .incident-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; background: rgba(227, 187, 107, 0.09); color: var(--gold); font-weight: 950; }
 .incident-card h3 { margin: 22px 0 6px; }
@@ -658,6 +659,7 @@ input:hover, select:hover { border-color: #345371; }
 }
 
 @media (max-width: 900px) {
+  body.nav-open { overflow: hidden; }
   .sidebar { transform: translateX(-101%); width: min(290px, calc(100vw - 50px)); transition: transform 190ms ease; }
   body.nav-open .sidebar { transform: none; }
   body.nav-open::after { position: fixed; inset: 0; z-index: 35; background: rgba(0, 0, 0, 0.62); content: ""; }
